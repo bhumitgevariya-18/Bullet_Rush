@@ -1333,11 +1333,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3055068908262710192, guid: 26255f3aaf9c7294b8db0a85f9577187, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8917002
+      value: 1.342
       objectReference: {fileID: 0}
     - target: {fileID: 3055068908262710192, guid: 26255f3aaf9c7294b8db0a85f9577187, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.025993
+      value: 10.02599
       objectReference: {fileID: 0}
     - target: {fileID: 3055068908262710192, guid: 26255f3aaf9c7294b8db0a85f9577187, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1657,37 +1657,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!1 &1795557156
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1795557157}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1795557157
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1795557156}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.843231, y: 1.8810434, z: 8.4245405}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1879083981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,6 +1703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f5d345e3a2c4840af4c2feff43a933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitVFXPrefab: {fileID: 5697787458939147922, guid: 3825c9d8163943a4bb6847be0e77eed2, type: 3}
   animator: {fileID: 372852019}
   muzzleFlash: {fileID: 123961497648067712}
   damageAmount: 1
@@ -2096,11 +2066,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 109229240578839344, guid: 99ef80d70639da64bae98a115bbfa163, type: 3}
       propertyPath: ShapeModule.angle
-      value: 20.725922
+      value: 46.661205
       objectReference: {fileID: 0}
     - target: {fileID: 109229240578839344, guid: 99ef80d70639da64bae98a115bbfa163, type: 3}
       propertyPath: moveWithTransform
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 109229240578839344, guid: 99ef80d70639da64bae98a115bbfa163, type: 3}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 109229240578839344, guid: 99ef80d70639da64bae98a115bbfa163, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 109229240578839344, guid: 99ef80d70639da64bae98a115bbfa163, type: 3}
       propertyPath: ShapeModule.radiusThickness
@@ -2112,11 +2090,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 109229240578839344, guid: 99ef80d70639da64bae98a115bbfa163, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 25
+      value: 12.951294
       objectReference: {fileID: 0}
     - target: {fileID: 109229240578839344, guid: 99ef80d70639da64bae98a115bbfa163, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.6
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 109229240578839344, guid: 99ef80d70639da64bae98a115bbfa163, type: 3}
       propertyPath: EmissionModule.rateOverDistance.scalar
@@ -2149,7 +2127,7 @@ PrefabInstance:
     - target: {fileID: 2810769102236331932, guid: 99ef80d70639da64bae98a115bbfa163, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: f1b0fea076fb0574d868f6e3d9523f52, type: 2}
+      objectReference: {fileID: 2100000, guid: c8261f8edce1ef5418a8bb1786d4f617, type: 2}
     - target: {fileID: 7068109169235422025, guid: 99ef80d70639da64bae98a115bbfa163, type: 3}
       propertyPath: m_Name
       value: Muzzle Flash
@@ -2173,4 +2151,3 @@ SceneRoots:
   - {fileID: 1992852628}
   - {fileID: 1062960519}
   - {fileID: 203666968}
-  - {fileID: 1795557157}
