@@ -3,7 +3,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] ParticleSystem muzzleFlash;
-    [SerializeField] Animator animator;
+    Animator animator;
     private void Awake()
     {
         animator = GetComponent<Animator>();
