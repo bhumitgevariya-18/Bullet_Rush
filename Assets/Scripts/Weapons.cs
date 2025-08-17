@@ -3,10 +3,17 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] Animator animator;
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public void Shooting(WeaponSO weaponSO)
     {
         muzzleFlash.Play();
+        animator.Play(weaponSO.SHOOT_STRING, 0, 0f); // Play the shooting animation
+
         RaycastHit hit;
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity))
