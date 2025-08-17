@@ -4,6 +4,7 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] ParticleSystem muzzleFlash;
     Animator animator;
+    const string SHOOT_STRING = "Shoot";
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -12,7 +13,7 @@ public class Weapon : MonoBehaviour
     public void Shooting(WeaponSO weaponSO)
     {
         muzzleFlash.Play();
-        animator.Play(weaponSO.SHOOT_STRING, 0, 0f); // Play the shooting animation
+        animator.Play(SHOOT_STRING, 0, 0f); // Play the shooting animation
 
         RaycastHit hit;
 
