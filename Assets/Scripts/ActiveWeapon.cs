@@ -22,8 +22,8 @@ public class ActiveWeapon : MonoBehaviour
 
     void Update()
     {
-        timeSinceLastShot += Time.deltaTime;
         HandleShooting();
+        HandleZoming();
     }
 
     public void SwitchWeapon(WeaponSO weaponSO)
@@ -40,6 +40,8 @@ public class ActiveWeapon : MonoBehaviour
 
     void HandleShooting()
     {
+        timeSinceLastShot += Time.deltaTime;
+
         if (!starterAssetsInputs.shoot) return;
 
         if(timeSinceLastShot >= weaponSO.FireRate)
@@ -52,5 +54,20 @@ public class ActiveWeapon : MonoBehaviour
         {
             starterAssetsInputs.ShootInput(false); // Reset shoot input after processing
         }
+    }
+
+    void HandleZoming()
+    {
+        if(!weaponSO.IsZoomable) return;
+
+        if(starterAssetsInputs.zoom)
+        {
+            Camera.main.fieldOfView = weaponSO.ZoomedFOV;
+        }
+        else
+        {
+            Camera.main.fieldOfView = weaponSO.DefaultFOV;
+        }
+
     }
 }
