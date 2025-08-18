@@ -122,6 +122,11 @@ namespace StarterAssets
 			CameraRotation();
 		}
 
+		public void ChangeRotationSpeed(float amount)
+		{
+			RotationSpeed = amount; //changes rotation speed when zoomed the view
+		}
+
 		private void GroundedCheck()
 		{
 			// set sphere position, with offset

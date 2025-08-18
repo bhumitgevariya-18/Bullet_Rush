@@ -9,15 +9,19 @@ public class ActiveWeapon : MonoBehaviour
     [SerializeField] GameObject zoomScreen; // Reference to the zoom screen
 
     StarterAssetsInputs starterAssetsInputs;
+    FirstPersonController firstPersonController;
     Weapon currentWeapon;
 
     float timeSinceLastShot = 0f;
     float defaultFOV;
+    float defaultRotationSpeed;
 
     private void Awake()
     {
         starterAssetsInputs = GetComponentInParent<StarterAssetsInputs>();
+        firstPersonController = GetComponentInParent<FirstPersonController>();
         defaultFOV = playerFollowCamera.m_Lens.FieldOfView; // Store the default FOV from the Cinemachine camera
+        defaultRotationSpeed = firstPersonController.RotationSpeed; // Store the default rotation speed
     }
 
     private void Start()
@@ -69,11 +73,13 @@ public class ActiveWeapon : MonoBehaviour
         {
             playerFollowCamera.m_Lens.FieldOfView = weaponSO.ZoomFOV; // Set the FOV to the zoomed value
             zoomScreen.SetActive(true); // Activate the zoom screen
+            firstPersonController.ChangeRotationSpeed(weaponSO.ZoomRotationSpeed); // Optionally reduce rotation speed when zoomed
         }
         else
         {
             playerFollowCamera.m_Lens.FieldOfView = defaultFOV; // Reset to the default FOV
             zoomScreen.SetActive(false); // Deactivate the zoom screen
+            firstPersonController.ChangeRotationSpeed(defaultRotationSpeed);
         }
 
     }
