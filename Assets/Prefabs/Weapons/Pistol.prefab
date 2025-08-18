@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5344642739732060979}
   - component: {fileID: 7908945623583704986}
   - component: {fileID: 426960746230925824}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4801470517820887578}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d91fae2703d43046a1c37804ae23dad, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -226,6 +226,10 @@ PrefabInstance:
     - target: {fileID: 7066504874121252111, guid: db9b7e6077ce0b541b111414bd276b42, type: 3}
       propertyPath: m_Name
       value: Muzzle Flash Pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066504874121252111, guid: db9b7e6077ce0b541b111414bd276b42, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
