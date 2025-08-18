@@ -21,6 +21,7 @@ public class Robot : MonoBehaviour
 
     void Update()
     {
+        if(!player) return; // when player is not found or maybe destroyed
         agent.SetDestination(player.transform.position);
     }
 
