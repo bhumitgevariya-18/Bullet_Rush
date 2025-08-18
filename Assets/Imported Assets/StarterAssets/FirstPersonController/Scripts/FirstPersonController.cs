@@ -124,8 +124,8 @@ namespace StarterAssets
 
 		public void ChangeRotationSpeed(float amount)
 		{
-			RotationSpeed = amount; //changes rotation speed when zoomed the view
-		}
+			RotationSpeed = amount; //changes rotation speed when the view is zoomed 
+        }
 
 		private void GroundedCheck()
 		{
