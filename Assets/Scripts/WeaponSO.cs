@@ -10,4 +10,5 @@ public class WeaponSO : ScriptableObject
     public GameObject HitVFXPrefab;
     public bool IsAutomatic = false; // Added property to check if the weapon is automatic ex. machine guns
     public bool IsZoomable = false; // Added property to check if the weapon is zoomable
+    public float ZoomFOV = 5f; // Field of view when zoomed
 }
