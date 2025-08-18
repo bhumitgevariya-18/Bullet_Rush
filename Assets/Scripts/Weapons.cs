@@ -1,21 +1,26 @@
+using Cinemachine;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] LayerMask interactionLayers; // Layer mask to specify which layers the raycast should interact with ex. not with base weapon pickup
+    
+    CinemachineImpulseSource impulseSource; // For camera shake effect 
 
     Animator animator;
     const string SHOOT_STRING = "Shoot";
 
     private void Awake()
     {
+        impulseSource = GetComponent<CinemachineImpulseSource>(); 
         animator = GetComponent<Animator>();
     }
 
     public void Shooting(WeaponSO weaponSO)
     {
         muzzleFlash.Play();
+        impulseSource.GenerateImpulse(); // Generate camera shake effect
         animator.Play(SHOOT_STRING, 0, 0f); // Play the shooting animation
 
         RaycastHit hit;
