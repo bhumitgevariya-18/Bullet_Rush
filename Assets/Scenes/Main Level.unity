@@ -17660,9 +17660,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49054fb583c3b44f82493969459659c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 5
+  startingHealth: 10
   deathvirtualCamera: {fileID: 720479278}
   weaponCamera: {fileID: 297409194}
+  shieldBars:
+  - {fileID: 106484068}
+  - {fileID: 19354157}
+  - {fileID: 1401444030}
+  - {fileID: 1399380863}
+  - {fileID: 623135640}
+  - {fileID: 2015714071}
+  - {fileID: 1360670557}
+  - {fileID: 1065952867}
+  - {fileID: 1312973766}
+  - {fileID: 454443015}
 --- !u!1001 &6429392909279103987
 PrefabInstance:
   m_ObjectHideFlags: 0
