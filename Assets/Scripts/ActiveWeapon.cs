@@ -92,12 +92,14 @@ public class ActiveWeapon : MonoBehaviour
         {
             playerFollowCamera.m_Lens.FieldOfView = currentWeaponSO.ZoomFOV; // Set the FOV to the zoomed value
             zoomScreen.SetActive(true); // Activate the zoom screen
+            currentWeapon.GetComponentInChildren<MeshRenderer>().enabled = false; // Hide the weapon mesh when zoomed
             firstPersonController.ChangeRotationSpeed(currentWeaponSO.ZoomRotationSpeed); // Optionally reduce rotation speed when zoomed
         }
         else
         {
             playerFollowCamera.m_Lens.FieldOfView = defaultFOV; // Reset to the default FOV
             zoomScreen.SetActive(false); // Deactivate the zoom screen
+            currentWeapon.GetComponentInChildren<MeshRenderer>().enabled = true; // Show the weapon mesh when not zoomed
             firstPersonController.ChangeRotationSpeed(defaultRotationSpeed);
         }
 
