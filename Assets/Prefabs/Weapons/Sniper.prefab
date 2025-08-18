@@ -80,6 +80,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzleFlash: {fileID: 3757178691052371457}
+  interactionLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!95 &8366403517442599306
 Animator:
   serializedVersion: 7
