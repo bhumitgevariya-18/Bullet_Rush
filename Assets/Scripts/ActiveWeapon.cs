@@ -1,13 +1,16 @@
 using UnityEngine;
 using StarterAssets;
 using Cinemachine;
+using TMPro;
 
 public class ActiveWeapon : MonoBehaviour
 {
-    [SerializeField] WeaponSO weaponSO;
+    [SerializeField] WeaponSO startingWeapon;
     [SerializeField] CinemachineVirtualCamera playerFollowCamera; // Reference to the Cinemachine virtual camera
     [SerializeField] GameObject zoomScreen; // Reference to the zoom screen
+    [SerializeField] TMP_Text ammoText; // Reference to the ammo text UI
 
+    WeaponSO currentWeaponSO;
     StarterAssetsInputs starterAssetsInputs;
     FirstPersonController firstPersonController;
     Weapon currentWeapon;
@@ -15,8 +18,9 @@ public class ActiveWeapon : MonoBehaviour
     float timeSinceLastShot = 0f;
     float defaultFOV;
     float defaultRotationSpeed;
+    int currentAmmo;
 
-    private void Awake()
+    void Awake()
     {
         starterAssetsInputs = GetComponentInParent<StarterAssetsInputs>();
         firstPersonController = GetComponentInParent<FirstPersonController>();
@@ -24,15 +28,22 @@ public class ActiveWeapon : MonoBehaviour
         defaultRotationSpeed = firstPersonController.RotationSpeed; // Store the default rotation speed
     }
 
-    private void Start()
+    void Start()
     {
-        currentWeapon = GetComponentInChildren<Weapon>();
+        SwitchWeapon(startingWeapon); // Switch to the starting weapon at the beginning
+        ManageAmmo(currentWeaponSO.MagazineSize); // Initialize ammo with the maximum ammo of the starting weapon
     }
 
     void Update()
     {
         HandleShooting();
         HandleZoming();
+    }
+
+    public void ManageAmmo(int amount)
+    {
+        currentAmmo += amount; // Increase ammo based on the amount
+        ammoText.text = currentAmmo.ToString("D2"); // Update the ammo text UI, D2 formats the number to always show two digits
     }
 
     public void SwitchWeapon(WeaponSO weaponSO)
@@ -44,7 +55,7 @@ public class ActiveWeapon : MonoBehaviour
 
         Weapon newWeapon = Instantiate(weaponSO.WeaponPrefab, transform).GetComponent<Weapon>();
         currentWeapon = newWeapon;
-        this.weaponSO = weaponSO;
+        this.currentWeaponSO = weaponSO;
     }
 
     void HandleShooting()
@@ -53,13 +64,13 @@ public class ActiveWeapon : MonoBehaviour
 
         if (!starterAssetsInputs.shoot) return;
 
-        if(timeSinceLastShot >= weaponSO.FireRate)
+        if(timeSinceLastShot >= currentWeaponSO.FireRate)
         {
-            currentWeapon.Shooting(weaponSO);
+            currentWeapon.Shooting(currentWeaponSO);
             timeSinceLastShot = 0f;
         }
 
-        if (!weaponSO.IsAutomatic)
+        if (!currentWeaponSO.IsAutomatic)
         {
             starterAssetsInputs.ShootInput(false); // Reset shoot input after processing
         }
@@ -67,13 +78,13 @@ public class ActiveWeapon : MonoBehaviour
 
     void HandleZoming()
     {
-        if(!weaponSO.IsZoomable) return;
+        if(!currentWeaponSO.IsZoomable) return;
 
         if(starterAssetsInputs.zoom)
         {
-            playerFollowCamera.m_Lens.FieldOfView = weaponSO.ZoomFOV; // Set the FOV to the zoomed value
+            playerFollowCamera.m_Lens.FieldOfView = currentWeaponSO.ZoomFOV; // Set the FOV to the zoomed value
             zoomScreen.SetActive(true); // Activate the zoom screen
-            firstPersonController.ChangeRotationSpeed(weaponSO.ZoomRotationSpeed); // Optionally reduce rotation speed when zoomed
+            firstPersonController.ChangeRotationSpeed(currentWeaponSO.ZoomRotationSpeed); // Optionally reduce rotation speed when zoomed
         }
         else
         {

@@ -12,4 +12,5 @@ public class WeaponSO : ScriptableObject
     public bool IsZoomable = false; // Added property to check if the weapon is zoomable
     public float ZoomFOV = 5f; // Field of view when zoomed
     public float ZoomRotationSpeed = 0.3f; // Speed of rotation when zoomed
+    public int MagazineSize = 12; // Amount of ammo in the magazine
 }
