@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] GameObject robotExplosionVFX;
+    [SerializeField] GameObject explosionVFX;
     [SerializeField] int startingHealth = 3;
 
     int currentHealth;
@@ -24,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void SelfDestruct()
     {
-        Instantiate(robotExplosionVFX, transform.position, Quaternion.identity);
+        Instantiate(explosionVFX, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 }

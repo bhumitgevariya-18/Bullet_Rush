@@ -30,7 +30,10 @@ public class Weapon : MonoBehaviour
 
         {
             Instantiate(weaponSO.HitVFXPrefab, hit.point, Quaternion.identity); // hitting vfx
-            EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
+            EnemyHealth enemyHealth = hit.collider.GetComponentInParent<EnemyHealth>();
+            //it was just GetComponent<EnemyHealth>() but it son't work with tower since it has 2 colliders in child and script on parent
+            //also it is better to use GetComponentInParent since it starts checking from gameobject itself and then goes up the parent hierarchy
+
             enemyHealth?.TakeDamage(weaponSO.Damage);
         }
     }
