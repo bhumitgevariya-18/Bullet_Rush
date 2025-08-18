@@ -43,6 +43,12 @@ public class ActiveWeapon : MonoBehaviour
     public void ManageAmmo(int amount)
     {
         currentAmmo += amount; // Increase ammo based on the amount
+
+        if (currentAmmo > currentWeaponSO.MagazineSize)
+        {
+            currentAmmo = currentWeaponSO.MagazineSize; // Ensure ammo doesn't exceed magazine size
+        }
+
         ammoText.text = currentAmmo.ToString("D2"); // Update the ammo text UI, D2 formats the number to always show two digits
     }
 
@@ -56,6 +62,7 @@ public class ActiveWeapon : MonoBehaviour
         Weapon newWeapon = Instantiate(weaponSO.WeaponPrefab, transform).GetComponent<Weapon>();
         currentWeapon = newWeapon;
         this.currentWeaponSO = weaponSO;
+        ManageAmmo(currentWeaponSO.MagazineSize); // Initialize ammo with the maximum ammo of the new weapon
     }
 
     void HandleShooting()
@@ -64,10 +71,11 @@ public class ActiveWeapon : MonoBehaviour
 
         if (!starterAssetsInputs.shoot) return;
 
-        if(timeSinceLastShot >= currentWeaponSO.FireRate)
+        if(timeSinceLastShot >= currentWeaponSO.FireRate && currentAmmo > 0)
         {
             currentWeapon.Shooting(currentWeaponSO);
             timeSinceLastShot = 0f;
+            ManageAmmo(-1); // Decrease ammo by 1 when shooting
         }
 
         if (!currentWeaponSO.IsAutomatic)
