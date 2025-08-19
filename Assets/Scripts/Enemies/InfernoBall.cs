@@ -9,6 +9,8 @@ public class InfernoBall : MonoBehaviour
 
     int damage;
 
+    const string PLAYER_STRING = "Player";
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -26,7 +28,7 @@ public class InfernoBall : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(PLAYER_STRING))
         {
             PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
             playerHealth.TakeDamage(damage); // Damage the player if they are hit
