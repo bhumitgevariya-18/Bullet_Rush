@@ -6,6 +6,7 @@ public class Robot : MonoBehaviour
 {
     FirstPersonController player;
     NavMeshAgent agent;
+    GameManager gameManager;
 
     const string PLAYER_STRING = "Player";
 
@@ -17,6 +18,7 @@ public class Robot : MonoBehaviour
     void Start()
     {
         player = FindFirstObjectByType<FirstPersonController>();
+        gameManager = FindFirstObjectByType<GameManager>();
     }
 
     void Update()
@@ -31,6 +33,7 @@ public class Robot : MonoBehaviour
         {
             EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
             enemyHealth.SelfDestruct();
+            gameManager.UpdateEnemiesLeft(-1); // one enemy has been destroyed
         }
     }
 }

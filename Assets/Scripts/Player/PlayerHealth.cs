@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Image[] shieldBars; // UI shield bars to represent health of shield
     [SerializeField] GameObject gameOverDisplay;
 
-    int currentHealth;
+    public int currentHealth;
     int gameOverVirtualCameraPriority = 20;
 
     void Awake()

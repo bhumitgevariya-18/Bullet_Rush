@@ -26,8 +26,10 @@ public class InfernoBall : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (!other.CompareTag("Player")) return; // Only interact with the player
+
         PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
-        playerHealth?.TakeDamage(damage); // Damage the player if they are hit
+        playerHealth.TakeDamage(damage); // Damage the player if they are hit
 
         Instantiate(InfernoBallHitVFX, transform.position, Quaternion.identity);
         Destroy(gameObject); // Destroy the inferno ball after hitting something
