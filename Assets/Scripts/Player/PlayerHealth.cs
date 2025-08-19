@@ -20,15 +20,10 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = startingHealth;
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
-        ManageShieldUI();
+        ManageHealthUI();
 
         if (currentHealth <= 0)
         {
@@ -46,7 +41,7 @@ public class PlayerHealth : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    void ManageShieldUI()
+    void ManageHealthUI()
     {
         for (int i = 0; i < shieldBars.Length; i++)
         {
@@ -59,5 +54,15 @@ public class PlayerHealth : MonoBehaviour
                 shieldBars[i].enabled = false; // Disable the shield bar
             }
         }
+    }
+
+    public void AddHealth(int amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > startingHealth)
+        {
+            currentHealth = startingHealth; // Cap health at starting health
+        }
+        ManageHealthUI();
     }
 }

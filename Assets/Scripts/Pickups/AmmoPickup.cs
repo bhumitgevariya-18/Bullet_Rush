@@ -8,4 +8,9 @@ public class AmmoPickup : Pickup
     {
         activeWeapon.ManageAmmo(ammoAmount); // Add ammo to the active weapon
     }
+
+    protected override void OnHealthPickup(PlayerHealth playerHealth)
+    {
+        // No health pickup logic for ammo pickups
+    }
 }

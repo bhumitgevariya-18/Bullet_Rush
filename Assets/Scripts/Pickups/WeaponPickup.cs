@@ -8,4 +8,8 @@ public class WeaponPickup : Pickup
     {
         activeWeapon.SwitchWeapon(weaponSO);
     }
+    protected override void OnHealthPickup(PlayerHealth playerHealth)
+    {
+        // No health pickup logic for weapon pickups
+    }
 }
