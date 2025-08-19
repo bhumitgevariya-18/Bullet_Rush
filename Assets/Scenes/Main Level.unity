@@ -359,8 +359,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190250
-  m_fontColor: {r: 0.6666667, g: 0, b: 0, a: 1}
+    rgba: 4278255615
+  m_fontColor: {r: 1, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2177,6 +2177,10 @@ PrefabInstance:
     - target: {fileID: 6474030563206447825, guid: 164424ad4ca40554ea76a691b5b9af9d, type: 3}
       propertyPath: m_Name
       value: Spawn Gate (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474030563206447825, guid: 164424ad4ca40554ea76a691b5b9af9d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5294,7 +5298,7 @@ Transform:
   m_GameObject: {fileID: 765518837}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.559, z: 1.676}
+  m_LocalPosition: {x: 0, y: 0.559, z: 1.797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7398,31 +7402,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5400464131822906160, guid: 0b1cb690456430f41bcfd608be24d20d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.902363
+      value: -8.317519
       objectReference: {fileID: 0}
     - target: {fileID: 5400464131822906160, guid: 0b1cb690456430f41bcfd608be24d20d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4579363
+      value: -2.5230997
       objectReference: {fileID: 0}
     - target: {fileID: 5400464131822906160, guid: 0b1cb690456430f41bcfd608be24d20d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.882399
+      value: -3.933374
       objectReference: {fileID: 0}
     - target: {fileID: 5400464131822906160, guid: 0b1cb690456430f41bcfd608be24d20d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7489558
+      value: 0.7400291
       objectReference: {fileID: 0}
     - target: {fileID: 5400464131822906160, guid: 0b1cb690456430f41bcfd608be24d20d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.11529009
       objectReference: {fileID: 0}
     - target: {fileID: 5400464131822906160, guid: 0b1cb690456430f41bcfd608be24d20d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.66261995
+      value: 0.6547223
       objectReference: {fileID: 0}
     - target: {fileID: 5400464131822906160, guid: 0b1cb690456430f41bcfd608be24d20d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.102000035
       objectReference: {fileID: 0}
     - target: {fileID: 5400464131822906160, guid: 0b1cb690456430f41bcfd608be24d20d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8786,7 +8790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6666667, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8957,6 +8961,7 @@ MonoBehaviour:
   TargetPlayer: {fileID: 6894585927950287557}
   infernoBallSpawnPoint: {fileID: 765518838}
   fireRate: 2
+  damage: 2
 --- !u!1 &1195396800 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6d9f34a328cdc444fb9e28d422132600, type: 3}
@@ -12058,6 +12063,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawn Gate (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6474030563206447825, guid: 164424ad4ca40554ea76a691b5b9af9d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13101,6 +13110,10 @@ PrefabInstance:
     - target: {fileID: 6474030563206447825, guid: 164424ad4ca40554ea76a691b5b9af9d, type: 3}
       propertyPath: m_Name
       value: Spawn Gate (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474030563206447825, guid: 164424ad4ca40554ea76a691b5b9af9d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15796,15 +15809,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4296767836164276812, guid: 62bf075f4a20e8444880f314b5046d42, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.902363
+      value: -8.317519
       objectReference: {fileID: 0}
     - target: {fileID: 4296767836164276812, guid: 62bf075f4a20e8444880f314b5046d42, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4579363
+      value: -2.5230997
       objectReference: {fileID: 0}
     - target: {fileID: 4296767836164276812, guid: 62bf075f4a20e8444880f314b5046d42, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.882399
+      value: -3.933374
       objectReference: {fileID: 0}
     - target: {fileID: 4296767836164276812, guid: 62bf075f4a20e8444880f314b5046d42, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17382,6 +17395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawn Gate
       objectReference: {fileID: 0}
+    - target: {fileID: 6474030563206447825, guid: 164424ad4ca40554ea76a691b5b9af9d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18120,23 +18137,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1826105138944497349, guid: c6680b83ddaf2f749b6e571d04e801a4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7489558
+      value: 0.7400291
       objectReference: {fileID: 0}
     - target: {fileID: 1826105138944497349, guid: c6680b83ddaf2f749b6e571d04e801a4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.11529009
       objectReference: {fileID: 0}
     - target: {fileID: 1826105138944497349, guid: c6680b83ddaf2f749b6e571d04e801a4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.66261995
+      value: 0.6547223
       objectReference: {fileID: 0}
     - target: {fileID: 1826105138944497349, guid: c6680b83ddaf2f749b6e571d04e801a4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.102000035
       objectReference: {fileID: 0}
     - target: {fileID: 1826105138944497349, guid: c6680b83ddaf2f749b6e571d04e801a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -17.71
       objectReference: {fileID: 0}
     - target: {fileID: 1826105138944497349, guid: c6680b83ddaf2f749b6e571d04e801a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y

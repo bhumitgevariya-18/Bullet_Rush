@@ -8,6 +8,7 @@ public class InfernoTower : MonoBehaviour
     [SerializeField] Transform TargetPlayer;
     [SerializeField] Transform infernoBallSpawnPoint;
     [SerializeField] float fireRate = 2f;
+    [SerializeField] int damage = 2;
 
     PlayerHealth playerHealth;
 
@@ -27,7 +28,8 @@ public class InfernoTower : MonoBehaviour
         while(playerHealth)
         {
             yield return new WaitForSeconds(fireRate);
-            Instantiate(infernoBallPrefab, infernoBallSpawnPoint.position, towerHead.rotation);
+            InfernoBall newInfernoBall = Instantiate(infernoBallPrefab, infernoBallSpawnPoint.position, towerHead.rotation).GetComponent<InfernoBall>();
+            newInfernoBall.Initialize(damage); // Initialize the inferno ball with damage
         }
     }
 }
