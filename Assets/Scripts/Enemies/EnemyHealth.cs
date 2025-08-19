@@ -7,9 +7,17 @@ public class EnemyHealth : MonoBehaviour
 
     int currentHealth;
 
+    GameManager gameManager;
+
     void Awake()
     {
         currentHealth = startingHealth;
+    }
+
+    void Start()
+    {
+        gameManager = FindFirstObjectByType<GameManager>();
+        gameManager.UpdateEnemiesLeft(1); // one enemy has spawned
     }
 
     public void TakeDamage(int amount)
@@ -18,6 +26,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            gameManager.UpdateEnemiesLeft(-1); // one enemy has been dsestroyed
             SelfDestruct();
         }
     }
