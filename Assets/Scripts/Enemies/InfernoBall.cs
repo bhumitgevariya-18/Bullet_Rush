@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InfernoBall : MonoBehaviour
 {
-    [SerializeField] float speed = 30f;
+    [SerializeField] float speed = 20f;
 
     Rigidbody rb;
 
