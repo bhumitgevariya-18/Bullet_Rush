@@ -150,3 +150,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  InfernoBallHitVFX: {fileID: 9173147481148151125, guid: dd50147cdf7280b4ba3bc3a61a785221, type: 3}

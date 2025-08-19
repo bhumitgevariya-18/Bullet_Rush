@@ -3,6 +3,7 @@ using UnityEngine;
 public class InfernoBall : MonoBehaviour
 {
     [SerializeField] float speed = 20f;
+    [SerializeField] GameObject InfernoBallHitVFX;
 
     Rigidbody rb;
 
@@ -27,5 +28,8 @@ public class InfernoBall : MonoBehaviour
     {
         PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
         playerHealth?.TakeDamage(damage); // Damage the player if they are hit
+
+        Instantiate(InfernoBallHitVFX, transform.position, Quaternion.identity);
+        Destroy(gameObject); // Destroy the inferno ball after hitting something
     }
 }
