@@ -5,6 +5,9 @@ public class EnemyHealthEndless : MonoBehaviour
     [SerializeField] GameObject explosionVFX;
     [SerializeField] int startingHealth = 3;
 
+    [SerializeField] GameObject respawnPrefab;
+    [SerializeField] bool canRespawn = true;
+
     int currentHealth;
 
     public int enemyIndex; // Index of the enemy in the EndlessEnemyManager
@@ -13,9 +16,12 @@ public class EnemyHealthEndless : MonoBehaviour
 
     EndlessEnemyManager endlessEnemyManager;
 
-    void Awake()
+    public GameObject RespawnPrefab => respawnPrefab;
+    public bool CanRespawn => canRespawn;
+
+    void OnEnable()
     {
-        currentHealth = startingHealth;
+        currentHealth = startingHealth; // Reset health when the enemy is spawned
     }
 
     void Start()
@@ -37,11 +43,16 @@ public class EnemyHealthEndless : MonoBehaviour
 
     public void SelfDestruct()
     {
-        Instantiate(explosionVFX, transform.position, Quaternion.identity);
-        Destroy(this.gameObject);
-        if (!this.gameObject.CompareTag("RobotEnemy"))
+        if(explosionVFX != null)
         {
-            endlessEnemyManager.RespawnEnemy(enemyIndex);
+            Instantiate(explosionVFX, transform.position, Quaternion.identity);
         }
+
+        if (!CompareTag("RobotEnemy"))
+        {
+            endlessEnemyManager.RespawnEnemy(enemyIndex); // Respawn the enemy after destruction
+        }
+
+        Destroy(gameObject);
     }
 }

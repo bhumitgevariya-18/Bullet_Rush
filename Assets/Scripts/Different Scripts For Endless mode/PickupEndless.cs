@@ -1,16 +1,26 @@
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public abstract class PickupEndless : MonoBehaviour
 {
-    [SerializeField] float rotationSpeed = 100f; // Speed of rotation for the pickup item
+    [SerializeField] float rotationSpeed = 100f;
+    [SerializeField] float respawnDelay = 10f;   // ⏳ Time before pickup reappears
 
     const string PLAYER_STRING = "Player";
     const string HEALTH_PICKUP_STRING = "HealthPickup";
 
+    private Collider col;
+    private Renderer[] renderers;
+
+    void Awake()
+    {
+        col = GetComponent<Collider>();
+        renderers = GetComponentsInChildren<Renderer>(); // get all renderers (model, particles etc.)
+    }
 
     void Update()
     {
-        transform.Rotate(0f, rotationSpeed * Time.deltaTime, 0f); // Rotate the pickup item
+        transform.Rotate(0f, rotationSpeed * Time.deltaTime, 0f);
     }
 
     void OnTriggerEnter(Collider other)
@@ -21,17 +31,30 @@ public abstract class PickupEndless : MonoBehaviour
             {
                 PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
                 OnHealthPickup(playerHealth);
-                Destroy(this.gameObject); // Destroy the health pickup after it has been picked up
-
+                StartCoroutine(RespawnRoutine());
+                return;
             }
 
             ActiveWeaponEndless activeWeaponEndless = other.GetComponentInChildren<ActiveWeaponEndless>();
             OnPickup(activeWeaponEndless);
-            Destroy(this.gameObject); // Destroy the pickup after it has been picked up
+            StartCoroutine(RespawnRoutine());
         }
     }
 
-    protected abstract void OnPickup(ActiveWeaponEndless activeWeaponEndless);
+    private IEnumerator RespawnRoutine()
+    {
+        col.enabled = false;
+        foreach (Renderer r in renderers)
+            r.enabled = false;
 
+        yield return new WaitForSeconds(respawnDelay);
+
+        // Show pickup again
+        col.enabled = true;
+        foreach (Renderer r in renderers)
+            r.enabled = true;
+    }
+
+    protected abstract void OnPickup(ActiveWeaponEndless activeWeaponEndless);
     protected abstract void OnHealthPickup(PlayerHealth playerHealth);
 }

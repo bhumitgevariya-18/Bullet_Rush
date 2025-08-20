@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7159429379964211347}
   - component: {fileID: 3921739482684957560}
   - component: {fileID: 5175771049642446777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Inferno Tower (3)
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612687773679201980}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.94997215, z: -0, w: -0.31233475}
+  m_LocalRotation: {x: -0, y: -0.94997215, z: 0, w: -0.31233475}
   m_LocalPosition: {x: -24.49469, y: 7.852001, z: 22.586731}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   towerHead: {fileID: 1340778610485948382}
   TargetPlayer: {fileID: 0}
   infernoBallSpawnPoint: {fileID: 351729776217397104}
-  fireRate: 2
+  fireRate: 1
   damage: 1
 --- !u!114 &5175771049642446777
 MonoBehaviour:
@@ -65,7 +65,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionVFX: {fileID: 5356374467772209734, guid: b841c5132d455d9448fe08359896a022, type: 3}
-  startingHealth: 3
+  startingHealth: 30
+  respawnPrefab: {fileID: 976015262119916581, guid: 0a2e246f89fdf9f479faacecf13bb6a8, type: 3}
+  canRespawn: 1
   enemyIndex: 6
 --- !u!1 &3515622741715616828
 GameObject:
@@ -78,7 +80,7 @@ GameObject:
   - component: {fileID: 7700336103049197837}
   - component: {fileID: 6445845616916651545}
   - component: {fileID: 7186380368511053621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Glow Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +167,7 @@ GameObject:
   - component: {fileID: 8877230011575970013}
   - component: {fileID: 3352866860231939735}
   - component: {fileID: 5664372602150655760}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5864079619380618570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 351729776217397104}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InfernoBall Spawn Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +339,7 @@ GameObject:
   - component: {fileID: 1154008883723530927}
   - component: {fileID: 7248230435461524094}
   - component: {fileID: 3292551989104613509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}

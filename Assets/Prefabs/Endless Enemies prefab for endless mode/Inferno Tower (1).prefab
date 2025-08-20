@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2692581650829978196}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6783100506120521137}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InfernoBall Spawn Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 6843864865812876454}
   - component: {fileID: 10603374443263369}
   - component: {fileID: 8339598187626065456}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 6179064374530591406}
   - component: {fileID: 3310540521866145118}
   - component: {fileID: 6546655580330896095}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Glow Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,9 +269,9 @@ GameObject:
   - component: {fileID: 3815833487219950095}
   - component: {fileID: 8895997158655029086}
   - component: {fileID: 8422353321210452049}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Inferno Tower (1)
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,7 +284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7921314903256971657}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.72777283, z: -0, w: 0.6858183}
+  m_LocalRotation: {x: 0, y: -0.72777283, z: 0, w: 0.6858183}
   m_LocalPosition: {x: 25.576675, y: 11.658001, z: -15.207275}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
   towerHead: {fileID: 8431947912226356109}
   TargetPlayer: {fileID: 0}
   infernoBallSpawnPoint: {fileID: 6783100506120521137}
-  fireRate: 2
+  fireRate: 1
   damage: 1
 --- !u!114 &8422353321210452049
 MonoBehaviour:
@@ -323,7 +323,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionVFX: {fileID: 5356374467772209734, guid: b841c5132d455d9448fe08359896a022, type: 3}
-  startingHealth: 3
+  startingHealth: 30
+  respawnPrefab: {fileID: 976015262119916581, guid: 0a2e246f89fdf9f479faacecf13bb6a8, type: 3}
+  canRespawn: 1
   enemyIndex: 4
 --- !u!1 &8909271541112931715
 GameObject:
@@ -337,7 +339,7 @@ GameObject:
   - component: {fileID: 8294574820597368999}
   - component: {fileID: 511029454855982248}
   - component: {fileID: 8359768686115241284}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
