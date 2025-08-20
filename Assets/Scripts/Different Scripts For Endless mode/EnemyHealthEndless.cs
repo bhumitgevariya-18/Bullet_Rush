@@ -39,6 +39,9 @@ public class EnemyHealthEndless : MonoBehaviour
     {
         Instantiate(explosionVFX, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
-        endlessEnemyManager.RespawnEnemy(enemyIndex);
+        if (!this.gameObject.CompareTag("RobotEnemy"))
+        {
+            endlessEnemyManager.RespawnEnemy(enemyIndex);
+        }
     }
 }

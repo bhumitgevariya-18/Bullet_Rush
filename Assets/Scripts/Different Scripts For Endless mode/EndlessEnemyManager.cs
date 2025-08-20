@@ -24,7 +24,7 @@ public class EndlessEnemyManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         GameObject newEnemy = Instantiate(enemies[index], spawnPositions[index], Quaternion.identity);
-        newEnemy.GetComponent<EnemyHealthEndless>().enemyIndex = index; // Set the enemy index for health script
+        newEnemy.GetComponent<EnemyHealthEndless>().enemyIndex = index; // Set the enemy index
         enemies[index] = newEnemy;
     }
 }
