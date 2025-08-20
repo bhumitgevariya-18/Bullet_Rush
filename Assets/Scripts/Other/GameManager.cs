@@ -1,11 +1,12 @@
+using StarterAssets;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] TMP_Text enemiesLeftText;
-    [SerializeField] GameObject winText;
+    [SerializeField] GameObject winDisplay;
 
     PlayerHealth playerHealth;
 
@@ -25,7 +26,9 @@ public class GameManager : MonoBehaviour
 
         if (enemiesLeft <= 0 && playerHealth.currentHealth > 1)
         {
-            winText.SetActive(true);
+            StarterAssetsInputs starterAssetsInputs = FindFirstObjectByType<StarterAssetsInputs>();
+            starterAssetsInputs.SetCursorState(false); // Disable cursor lock state
+            winDisplay.SetActive(true);
         }
     }
 
@@ -39,5 +42,10 @@ public class GameManager : MonoBehaviour
     {
         Debug.LogWarning("It Does not work on Editor!!");
         Application.Quit();
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("Start Menu");
     }
 }
