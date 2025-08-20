@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Transform weaponCamera;
     [SerializeField] Image[] shieldBars; // UI shield bars to represent health of shield
     [SerializeField] GameObject gameOverDisplay;
+    [SerializeField] GameObject winDisplay;
 
     public int currentHealth;
     int gameOverVirtualCameraPriority = 20;
@@ -36,6 +37,16 @@ public class PlayerHealth : MonoBehaviour
         weaponCamera.parent = null; // Unparent the weapon camera
         deathvirtualCamera.Priority = gameOverVirtualCameraPriority; // Set the death camera priority higher so that it can switch to it
         gameOverDisplay.SetActive(true); // Show the game over display
+        StarterAssetsInputs starterAssetsInputs = FindFirstObjectByType<StarterAssetsInputs>();
+        starterAssetsInputs.SetCursorState(false); // Disable cursor lock state
+        Destroy(this.gameObject);
+    }
+
+    public void GameFinished()
+    {
+        weaponCamera.parent = null; // Unparent the weapon camera
+        deathvirtualCamera.Priority = gameOverVirtualCameraPriority; // Set the death camera priority higher so that it can switch to it
+        winDisplay.SetActive(true); // Show the game over display
         StarterAssetsInputs starterAssetsInputs = FindFirstObjectByType<StarterAssetsInputs>();
         starterAssetsInputs.SetCursorState(false); // Disable cursor lock state
         Destroy(this.gameObject);

@@ -3,31 +3,23 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManagerEndless : MonoBehaviour
 {
-    [SerializeField] TMP_Text enemiesLeftText;
-    [SerializeField] GameObject player;
+    [SerializeField] TMP_Text scoreText;
 
     PlayerHealth playerHealth;
 
-    int enemiesLeft = 0;
-
-    const string ENEMIES_LEFT_STRING = "Enemies Left: ";
+    int enemiesKilled = 0;
 
     private void Start()
     {
         playerHealth = FindFirstObjectByType<PlayerHealth>();
     }
 
-    public void UpdateEnemiesLeft(int amount)
+    public void UpdateEnemiesKilled(int amount)
     {
-        enemiesLeft += amount;
-        enemiesLeftText.text = ENEMIES_LEFT_STRING + enemiesLeft.ToString();
-
-        if (enemiesLeft <= 0 && playerHealth.currentHealth > 1)
-        {
-            playerHealth.GameFinished();
-        }
+        enemiesKilled += amount;
+        scoreText.text = enemiesKilled.ToString();
     }
 
     public void RestartLevel()

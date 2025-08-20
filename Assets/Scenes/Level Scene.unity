@@ -2833,7 +2833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesLeftText: {fileID: 927341447}
-  winDisplay: {fileID: 86543798}
+  player: {fileID: 5510534657434339083}
 --- !u!4 &394035204
 Transform:
   m_ObjectHideFlags: 0
@@ -10572,7 +10572,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 4852902fea07e924ab8496a56dd9bc4d, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 507fa399bec922a459b20f9685586b18, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1278423944
 GameObject:
@@ -18824,15 +18824,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7348643258206407952, guid: b76de77e9e36a1c44b094c10711555eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.402
+      value: 43.362125
       objectReference: {fileID: 0}
     - target: {fileID: 7348643258206407952, guid: b76de77e9e36a1c44b094c10711555eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.474
+      value: 2.068
       objectReference: {fileID: 0}
     - target: {fileID: 7348643258206407952, guid: b76de77e9e36a1c44b094c10711555eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.685
+      value: -4.2876325
       objectReference: {fileID: 0}
     - target: {fileID: 7348643258206407952, guid: b76de77e9e36a1c44b094c10711555eb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19810,6 +19810,7 @@ MonoBehaviour:
   - {fileID: 1312973766}
   - {fileID: 454443015}
   gameOverDisplay: {fileID: 549277538}
+  winDisplay: {fileID: 86543798}
   currentHealth: 0
 --- !u!1001 &6429392909279103987
 PrefabInstance:
