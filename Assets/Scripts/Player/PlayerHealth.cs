@@ -44,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void GameFinished()
     {
+        if (!winDisplay) return; // If win display is not set, do nothing (for endless mode)
         weaponCamera.parent = null; // Unparent the weapon camera
         deathvirtualCamera.Priority = gameOverVirtualCameraPriority; // Set the death camera priority higher so that it can switch to it
         winDisplay.SetActive(true); // Show the game over display

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6083a20c886e1e479f312f02bfcdc69, type: 3}
+  m_Name: Sniper Endless
+  m_EditorClassIdentifier: 
+  WeaponPrefab: {fileID: 7974536662189358948, guid: cd666bd9f768dba4c9e1f0f2270b2c96, type: 3}
+  Damage: 5
+  FireRate: 1
+  HitVFXPrefab: {fileID: 2384212573134242809, guid: 82dc67965361ab542931df36bdee9182, type: 3}
+  IsAutomatic: 0
+  IsZoomable: 1
+  ZoomFOV: 10
+  ZoomRotationSpeed: 0.3
+  MagazineSize: 10

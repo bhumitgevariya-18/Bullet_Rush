@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 982117878015512186, guid: a1b2d12154ef5c94791af9974a23c4f7, type: 3}
       propertyPath: m_Name
-      value: Muzzle Flash  Pistol
+      value: Muzzle Flash Pistol
       objectReference: {fileID: 0}
     - target: {fileID: 5239378849416415919, guid: a1b2d12154ef5c94791af9974a23c4f7, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

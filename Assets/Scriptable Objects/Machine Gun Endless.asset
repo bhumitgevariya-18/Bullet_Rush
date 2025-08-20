@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6083a20c886e1e479f312f02bfcdc69, type: 3}
+  m_Name: Machine Gun Endless
+  m_EditorClassIdentifier: 
+  WeaponPrefab: {fileID: 8162456620583326959, guid: 77a4e05b12996bd44a2d2a4849c81e07, type: 3}
+  Damage: 1
+  FireRate: 0.15
+  HitVFXPrefab: {fileID: 2384212573134242809, guid: 51080902fc9e9c048a08e5fb23ba7553, type: 3}
+  IsAutomatic: 1
+  IsZoomable: 0
+  ZoomFOV: 5
+  ZoomRotationSpeed: 0.3
+  MagazineSize: 48

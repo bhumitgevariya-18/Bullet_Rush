@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] TMP_Text enemiesLeftText;
-    [SerializeField] GameObject player;
 
     PlayerHealth playerHealth;
 

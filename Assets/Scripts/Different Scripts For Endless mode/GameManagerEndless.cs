@@ -7,19 +7,14 @@ public class GameManagerEndless : MonoBehaviour
 {
     [SerializeField] TMP_Text scoreText;
 
-    PlayerHealth playerHealth;
-
     int enemiesKilled = 0;
 
-    private void Start()
-    {
-        playerHealth = FindFirstObjectByType<PlayerHealth>();
-    }
+    const string SCORE = "Score: ";
 
     public void UpdateEnemiesKilled(int amount)
     {
         enemiesKilled += amount;
-        scoreText.text = enemiesKilled.ToString();
+        scoreText.text = SCORE + enemiesKilled.ToString();
     }
 
     public void RestartLevel()

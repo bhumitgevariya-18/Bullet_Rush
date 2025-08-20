@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealthEndless : MonoBehaviour
 {
     [SerializeField] GameObject explosionVFX;
     [SerializeField] int startingHealth = 3;
-    public int score = 0;
 
     int currentHealth;
 
-    GameManager gameManager;
+    public int enemyIndex; // Index of the enemy in the EndlessEnemyManager
+
+    GameManagerEndless gameManagerEndless;
+
+    EndlessEnemyManager endlessEnemyManager;
 
     void Awake()
     {
@@ -17,8 +20,8 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
-        gameManager = FindFirstObjectByType<GameManager>();
-        gameManager.UpdateEnemiesLeft(1); // one enemy has spawned
+        gameManagerEndless = FindFirstObjectByType<GameManagerEndless>();
+        endlessEnemyManager = FindFirstObjectByType<EndlessEnemyManager>();
     }
 
     public void TakeDamage(int amount)
@@ -27,8 +30,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            gameManager.UpdateEnemiesLeft(-1); // one enemy has been dsestroyed
-            score += 1;
+            gameManagerEndless.UpdateEnemiesKilled(1); // one enemy has been dsestroyed
             SelfDestruct();
         }
     }
@@ -37,5 +39,6 @@ public class EnemyHealth : MonoBehaviour
     {
         Instantiate(explosionVFX, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
+        endlessEnemyManager.RespawnEnemy(enemyIndex);
     }
 }

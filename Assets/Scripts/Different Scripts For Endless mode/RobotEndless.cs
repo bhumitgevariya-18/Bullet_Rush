@@ -2,11 +2,11 @@ using StarterAssets;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Robot : MonoBehaviour
+public class RobotEndless : MonoBehaviour
 {
     FirstPersonController player;
     NavMeshAgent agent;
-    GameManager gameManager;
+    GameManagerEndless gameManagerEndless;
 
     const string PLAYER_STRING = "Player";
 
@@ -18,12 +18,12 @@ public class Robot : MonoBehaviour
     void Start()
     {
         player = FindFirstObjectByType<FirstPersonController>();
-        gameManager = FindFirstObjectByType<GameManager>();
+        gameManagerEndless = FindFirstObjectByType<GameManagerEndless>();
     }
 
     void Update()
     {
-        if(!player) return; // when player is not found or maybe destroyed
+        if (!player) return; // when player is not found or maybe destroyed
         agent.SetDestination(player.transform.position);
     }
 
@@ -31,10 +31,9 @@ public class Robot : MonoBehaviour
     {
         if (other.CompareTag(PLAYER_STRING))
         {
-            EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
-            enemyHealth.SelfDestruct();
-            gameManager.UpdateEnemiesLeft(-1); // one enemy has been destroyed
-            enemyHealth.score += 1;
+            EnemyHealthEndless enemyHealthEndless = GetComponent<EnemyHealthEndless>();
+            enemyHealthEndless.SelfDestruct();
+            gameManagerEndless.UpdateEnemiesKilled(1); // one enemy has been destroyed
         }
     }
 }
