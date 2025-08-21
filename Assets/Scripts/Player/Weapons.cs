@@ -5,16 +5,20 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] LayerMask interactionLayers; // Layer mask to specify which layers the raycast should interact with ex. not with base weapon pickup
-    
+
     CinemachineImpulseSource impulseSource; // For camera shake effect 
 
+
     Animator animator;
+    AudioSource audioSource;
+
     const string SHOOT_STRING = "Shoot";
 
     private void Awake()
     {
         impulseSource = GetComponent<CinemachineImpulseSource>(); 
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Shooting(WeaponSO weaponSO)
@@ -22,6 +26,11 @@ public class Weapon : MonoBehaviour
         muzzleFlash.Play();
         impulseSource.GenerateImpulse(); // Generate camera shake effect
         animator.Play(SHOOT_STRING, 0, 0f); // Play the shooting animation
+
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(audioSource.clip);
+        }
 
         RaycastHit hit;
 

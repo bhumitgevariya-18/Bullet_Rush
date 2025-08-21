@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HealthPickupEndless : PickupEndless
 {
-    [SerializeField] int kitHealthAmount = 3;
+    [SerializeField] int kitHealthAmount = 5;
 
     protected override void OnHealthPickup(PlayerHealth playerHealth)
     {

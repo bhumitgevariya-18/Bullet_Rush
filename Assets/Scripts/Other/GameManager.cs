@@ -1,4 +1,3 @@
-using StarterAssets;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] TMP_Text enemiesLeftText;
+
+    PauseDisplay pauseDisplay;
 
     PlayerHealth playerHealth;
 
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         playerHealth = FindFirstObjectByType<PlayerHealth>();
+        pauseDisplay = FindFirstObjectByType<PauseDisplay>();
     }
 
     public void UpdateEnemiesLeft(int amount)
@@ -31,6 +33,8 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevel()
     {
+        pauseDisplay.Resume(); // Ensure the game is resumed before restarting
+
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentScene);
     }
