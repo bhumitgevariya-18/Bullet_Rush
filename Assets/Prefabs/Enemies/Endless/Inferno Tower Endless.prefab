@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5214195808621225428}
   m_Layer: 0
   m_Name: Inferno Tower Endless
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,6 +66,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionVFX: {fileID: 5356374467772209734, guid: b841c5132d455d9448fe08359896a022, type: 3}
   startingHealth: 3
+  respawnPrefab: {fileID: 0}
+  canRespawn: 1
+  enemyIndex: 0
 --- !u!1 &3181349362331234791
 GameObject:
   m_ObjectHideFlags: 0

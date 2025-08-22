@@ -88,7 +88,11 @@ public class EndlessEnemyManager : MonoBehaviour
 
         if(!slots[index].canRespawn) return;
 
-        StartCoroutine(RespawnAfterDelay(index));
+        if (!slots[index].prefab.CompareTag("Tower"))
+        {
+            StartCoroutine(RespawnAfterDelay(index));
+        }
+            
     }
 
     private IEnumerator RespawnAfterDelay(int index)
@@ -96,11 +100,6 @@ public class EndlessEnemyManager : MonoBehaviour
         yield return new WaitForSeconds(respawnDelay);
 
         var slot = slots[index];
-
-        if (slot.prefab.CompareTag("Tower"))
-        {
-            yield break; // Skip respawning towers
-        }
 
         GameObject inst;
 
