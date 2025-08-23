@@ -55,10 +55,6 @@ A fast-paced Unity FPS featuring both a classic level and an endless survival mo
 
 https://drive.google.com/file/d/12ulzwCDCdaN_CoS1gBagskip_VIp2s61/view?usp=sharing
 
-
-
-## Folder Structure
-
 ---
 
 ## Dependencies
