@@ -93,12 +93,3 @@ Contributions are welcome!
 - Submit a pull request
 ``
 ---
-
-## License
-
-This project is licensed under the MIT License.  
-See `LICENSE` for details.
-
----
-
-*For questions or issues, please open an issue on GitHub or contact the maintainer.*
