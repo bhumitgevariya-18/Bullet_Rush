@@ -51,26 +51,11 @@ A fast-paced Unity FPS featuring both a classic level and an endless survival mo
 
 ---
 
-## Installation / Getting Started
+## Download
 
-1. **Requirements:**  
-   - Unity 2021.3 LTS or newer  
-   - .NET Framework 4.7.1  
-   - Input System & Starter Assets packages
+https://drive.google.com/file/d/12ulzwCDCdaN_CoS1gBagskip_VIp2s61/view?usp=sharing
 
-2. **Setup:**  
-   - Clone or download the repository.
-   - Open the project in Unity Hub.
-   - Install required packages if prompted.
-   - Open the main scene (`Level` or `EndlessModeScene`).
-   - Press Play to start.
 
-3. **Build:**  
-   - Go to __File > Build Settings__.
-   - Add your main scene.
-   - Choose your platform and click __Build__.
-
----
 
 ## Folder Structure
 
