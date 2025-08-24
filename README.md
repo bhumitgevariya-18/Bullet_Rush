@@ -1,3 +1,5 @@
+![Image](https://github.com/user-attachments/assets/c160d1d3-72d9-4945-b769-7e5bdcb0d6bc)
+
 # Bullet Rush
 
 A fast-paced Unity FPS featuring both a classic level and an endless survival mode. Battle waves of enemies, collect pickups, and master a variety of weapons in a dynamic arena.
